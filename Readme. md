@@ -1,0 +1,75 @@
+
+
+# Telegram Bot with QR Code Generation and URL Shortening
+
+This project implements a Telegram bot using Firebase Functions and Telegraf. The bot provides two main functionalities:
+- **QR Code Generation**: Converts provided text into a QR code image.
+- **URL Shortening**: Shortens URLs using Bitly.
+
+## Requirements
+
+- Node.js (version 14 or higher recommended)
+- Firebase CLI
+- A Firebase project
+- Telegram Bot Token (get from [BotFather](https://core.telegram.org/bots#botfather))
+- Bitly API Key (register at [Bitly](https://bitly.com/))
+
+## Setup
+
+1. **Clone the repository**:
+
+    ```sh
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+
+2. **Install dependencies**:
+
+    ```sh
+    npm install
+    ```
+
+3. **Configure environment variables**:
+
+    Create a `.env` file in the root of your project and add the following variables:
+
+    ```env
+    TELEGRAM_TOKEN=your-telegram-bot-token
+    BITLY_APIKEY=your-bitly-api-key
+    ```
+
+4. **Deploy to Firebase**:
+
+    Ensure you have Firebase CLI installed and authenticated. Deploy the functions using:
+
+    ```sh
+    firebase deploy --only functions
+    ```
+
+## Usage
+
+1. **Start the bot**:
+
+    The bot is automatically started when you deploy it. You can interact with it on Telegram using the commands below:
+
+    - `/start`: Initializes the bot and shows a welcome message.
+    - `/help`: Lists available commands.
+    - `/qrcode <data>`: Generates a QR code from the provided data.
+    - `/shorten <url>`: Shortens the provided URL using Bitly.
+
+## Local Development
+
+To test the Firebase Functions locally:
+
+1. **Install Firebase Emulator Suite**:
+
+    ```sh
+    npm install -g firebase-tools
+    ```
+
+2. **Start the emulator**:
+
+    ```sh
+    firebase emulators:start
+    ```
+
